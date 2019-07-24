@@ -1,0 +1,12 @@
+{
+  "name": "react-native-google-sheet",
+  "version": "0.0.1",
+  "description": "A <GoogleSheet /> component for react-native to access Google Sheets API which gives you full control over the content and appearence of your spreadsheet data.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/subhendukundu/react-native-google-sheet.git"
+  },
+  "main": "index.js",
+  "author": "Subhendu Kundu",
+  "license": "MIT"
+}
