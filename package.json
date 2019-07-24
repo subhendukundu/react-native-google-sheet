@@ -6,7 +6,31 @@
     "type": "git",
     "url": "git://github.com/subhendukundu/react-native-google-sheet.git"
   },
+  "keywords": [
+    "google spreadsheets",
+    "google",
+    "gdata",
+    "sheet",
+    "google-sheet",
+    "react-native",
+    "spreadsheets",
+    "sheetapi",
+    "react-native-sheet",
+    "google-spreadsheet",
+    "google-spread-sheet",
+    "google-api",
+    "sheet-api",
+    "api",
+    "google-sheet-api"
+  ],
+  "homepage": "https://github.com/subhendukundu/react-native-google-sheet",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Subhendu Kundu",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-native-webview": "^5.12.1"
+  }
 }
