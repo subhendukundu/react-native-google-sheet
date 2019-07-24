@@ -1,5 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { Modal } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 const GOOGLE_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
@@ -249,6 +249,7 @@ class ReactNativeGoogleSheet {
     GoogleSheet(props) {
         const { credentialsDetails, getAccessToken, getUserDetails, spreadsheetId } = props;
         const { redirectUrl, clientId } = credentialsDetails;
+        const [ isLoggedIn, setLoggedIn ] = useState(false);
         
         const urlParams = {
           response_type: 'code',
@@ -287,9 +288,8 @@ class ReactNativeGoogleSheet {
         function handleNavigation (url) {
           const query = parse(url);
           if (query) {
-            if (query.error) {
-              console.log(new Error(`There was an error: ${query.error}`))
-            } else if (query.code) {
+            if (query.code) {
+              setLoggedIn(true);
               fetchAccessTokens(query.code).then((tokenData) => {
                 const token = tokenData.access_token;
                 if (typeof getAccessToken === 'function') {
@@ -311,25 +311,29 @@ class ReactNativeGoogleSheet {
         }
       
         return (
-          <View style={{ flex: 1 }}>
-            <WebView
-            useWebKit
-            sharedCookiesEnabled
-            source={{ uri: authUrl }}
-            mixedContentMode="compatibility"
-            javaScriptEnabled
-            javaScriptEnabledAndroid
-            bounces
-            userAgent = "Mozilla/5.0 (Linux; Android 4.1.1; Galaxy Nexus Build/JRO03C) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
-            domStorageEnabled
-            thirdPartyCookiesEnabled
-            originWhitelist={['*']}
-            onNavigationStateChange={onNavigationStateChange}
-            />
-          </View>
-        )
+            <>
+            {
+                isLoggedIn ? null :
+                <Modal>
+                    <WebView
+                        useWebKit
+                        sharedCookiesEnabled
+                        source={{ uri: authUrl }}
+                        mixedContentMode="compatibility"
+                        javaScriptEnabled
+                        javaScriptEnabledAndroid
+                        bounces
+                        userAgent = "Mozilla/5.0 (Linux; Android 4.1.1; Galaxy Nexus Build/JRO03C) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
+                        domStorageEnabled
+                        thirdPartyCookiesEnabled
+                        originWhitelist={['*']}
+                        onNavigationStateChange={onNavigationStateChange}
+                    />
+                </Modal>
+            }
+            </>
+        );
     }
-
 }
 const {
     GoogleSheet,

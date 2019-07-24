@@ -14,6 +14,12 @@ or
 yarn add react-native-google-sheet
 ```
 
+## Props
+| name | desc | type | default
+| --- | --- | --- | --- |
+| `spreadsheetId` | Id of the spread sheet  | string [How to find the id](https://developers.google.com/sheets/api/guides/concepts) | `''`
+| `credentialsDetails` | Google client details | object | {redirectUrl: '', clientId:''}
+
 ## Usage
 
 ```javascript
