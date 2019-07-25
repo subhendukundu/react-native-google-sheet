@@ -50,13 +50,7 @@ class ReactNativeGoogleSheet {
             responseValueRenderOption,
             range = 'A1',
             responseDateTimeRenderOption,
-            data = {
-                "values": [
-                  [
-                    100020
-                  ]
-                ]
-              },
+            data = {},
             ...rest
         } = arg;
         const { accessToken, spreadsheetId } = this;
@@ -248,7 +242,8 @@ class ReactNativeGoogleSheet {
 
     GoogleSheet(props) {
         const { credentialsDetails, getAccessToken, getUserDetails, spreadsheetId } = props;
-        const { redirectUrl, clientId } = credentialsDetails;
+        this.spreadsheetId = spreadsheetId;
+        const { redirectUrl = 'https://localhost', clientId } = credentialsDetails;
         const [ isLoggedIn, setLoggedIn ] = useState(false);
         
         const urlParams = {
@@ -296,7 +291,6 @@ class ReactNativeGoogleSheet {
                   getAccessToken(token);
                 }
                 this.accessToken = token;
-                this.spreadsheetId = spreadsheetId;
                 fetchUserDetails(token).then((userData) => {
                   if (typeof getUserDetails === 'function') {
                       getUserDetails(userData);
