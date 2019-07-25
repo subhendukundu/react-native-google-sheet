@@ -45,7 +45,7 @@ The ID of this spreadsheet is `1qpyC0XzvTcKT6EISywvqESX3A0MwQoFDE8p-Bll4hps`.
 
 Credentials details object is passed to login the user.
 
-- clientId -- The private id gerenrated using [Authentication](https://github.com/subhendukundu/react-native-google-sheet#Authentication).
+- clientId -- The private id gerenrated using [Authentication](https://github.com/subhendukundu/react-native-google-sheet#unauthenticated-access-read-only-access-on-public-docs).
 - redirectUrl -- your service account's email address
 
 The default value is
