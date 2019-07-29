@@ -4,6 +4,8 @@
 
 A `<GoogleSheet />` component for react-native no native code added light weight library to access Google Sheets API which gives you full control over the content and appearence of your spreadsheet data.
 
+No setup, no linking required, use it like a component.
+
 This module uses [Sheet V4 API](https://developers.google.com/sheets/api/).
 
 ## Installation
@@ -61,7 +63,7 @@ Use this for an app that needs to access a set of documents that you have full a
   - In the sidebar on the left, expand __APIs & auth__ > __Credentials__
   - Click blue "Add credentials" button
   - Select the "OAuth client ID" option
-  - Select the "other" key type option
+  - Select the "iOS" key type option
   - Click blue "Create" button
   - Save the Client_id, that's all you need (__it is the only copy!__)
 
