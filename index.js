@@ -240,7 +240,7 @@ class ReactNativeGoogleSheet {
         return response;
     }
 
-    GoogleSheet(props) {
+    GoogleSheet = props => {
         const { credentialsDetails, getAccessToken, getUserDetails, spreadsheetId } = props;
         this.spreadsheetId = spreadsheetId;
         const { redirectUrl = 'https://localhost', clientId } = credentialsDetails;
@@ -280,7 +280,7 @@ class ReactNativeGoogleSheet {
             });
             return response.json();
         }
-        function handleNavigation (url) {
+        const handleNavigation = (url) => {
           const query = parse(url);
           if (query) {
             if (query.code) {
