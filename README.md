@@ -1,5 +1,7 @@
 # react-native-google-sheet
 
+![npm (tag)](https://img.shields.io/npm/v/react-native-google-sheet/latest) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![GitHub top language](https://img.shields.io/github/languages/top/subhendukundu/react-native-google-sheet) ![David](https://img.shields.io/david/subhendukundu/react-native-google-sheet) [![publish size](https://badgen.net/packagephobia/publish/react-native-google-sheet)](https://badgen.net/packagephobia/publish/react-native-google-sheet)
+
 A `<GoogleSheet />` component for react-native no native code added light weight library to access Google Sheets API which gives you full control over the content and appearence of your spreadsheet data.
 
 This module uses [Sheet V4 API](https://developers.google.com/sheets/api/).
