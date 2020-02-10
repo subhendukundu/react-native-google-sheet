@@ -104,7 +104,7 @@ class ReactNativeGoogleSheet {
         return response;
     }
 
-    async batchGet(...arg) {
+    async batchGet(arg) {
         const { dateTimeRenderOption, majorDimension, ranges = 'A:Z', valueRenderOption,  ...rest } = arg;
         const { accessToken, spreadsheetId } = this;
         const params = {
